@@ -1,1 +1,1 @@
-# Zabbix
+# Zabbix-OTRS integration
