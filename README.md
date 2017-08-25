@@ -12,9 +12,7 @@
 
 > 1. ZabbixOTRS.yml
 
-> 2. executebash.sh
-
-> 3. create.py
+> 2. create.py
 
 ## O passo a passo está no documento zabbix-otrs.pdf
 
