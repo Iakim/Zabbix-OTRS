@@ -6,6 +6,9 @@
 
 1. Servidor com o OTRS 5 instalado
 2. Servidor com o zabbix 3.2.7 ou superior instalado
+3. Certifique-se de usar o repositório Epel
+
+yum install epel-release
 
 ## Download dos arquivos para o servidor zabbix
 
