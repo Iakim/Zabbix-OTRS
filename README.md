@@ -44,7 +44,7 @@ cp /tmp/fechar_chamado_zabbix.pl /usr/lib/zabbix/alertscripts/
 
 ## Scripts
 
-python criar_chamado_zabbix.py --otrs {IP_OTRS} --webservice ZabbixOTRS --user {USUARIO} --pass {SENHA} --customer {CLIENTE} --title “Teste de chamado” --desc "Descrição do Chamado" --fila "{FILA}" --servico "{SERVICO}" --sla "{SLA}"
+python criar_chamado_zabbix.py --otrs {IP_OTRS} --webservice ZabbixOTRS --user {USUARIO} --pass {SENHA} --customer {CLIENTE} --title "Teste de chamado" --desc "Descrição do Chamado" --fila "{FILA}" --servico "{SERVICO}" --sla "{SLA}"
 
 /bin/python /usr/lib/zabbix/alertscripts/criar_chamado_zabbix.py --otrs 10.20.19.47 --webservice ZabbixOTRS --user otrs.isaac --pass pass.isaac --customer cliente --title "PROBLEMA: {TRIGGER.SEVERITY} - {TRIGGER.NAME} - {TRIGGER.STATUS}" --desc "O host abaixo esta com problemas.
 Nome do host: {HOST.HOST}
@@ -55,6 +55,6 @@ Severidade da trigger: {TRIGGER.SEVERITY}
 Data do evento: {EVENT.DATE} {EVENT.TIME}
 Data atual: {DATE} {TIME}
 Trigger ID: {TRIGGER.ID}
-Total de tempo com problema: {EVENT.AGE}" --fila "Infra" --servico "INCIDENTE::INFRAESTRUTURA::SERVIDORES::LINUX" --sla "ALTA::24" --triggerid {TRIGGER.ID} --host {HOST.NAME} --status INDISPONIBILIDADE
+Total de tempo com problema: {EVENT.AGE}" --fila "Infra" --servico "INFRAESTRUTURA::SERVIDORES::LINUX" --sla "ALTA::24" --triggerid {TRIGGER.ID} --host {HOST.NAME} --status INDISPONIBILIDADE
 
 perl /usr/lib/zabbix/alertscripts/fechar_chamado_zabbix.pl -subject 'Incidente normalizado' -body 'O incidente foi normalizado' -triggerid {TRIGGER.ID}
