@@ -46,7 +46,7 @@ print('Ticket criado: '+str(t_number))
 print('Ticket criado: '+str(t_number)+'::'+args.title)
 
 # Ticket em atendimento
-t_upd = Ticket(State='Em atendimento')
+t_upd = Ticket(State='Aberto')
 
 new_article = Article(Subject='Em atendimento', Body='Analisando o incidente.', Charset='UTF8',
                       MimeType='text/plain')
