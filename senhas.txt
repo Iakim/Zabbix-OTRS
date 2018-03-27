@@ -1,0 +1,12 @@
+Mysql zabbix:
+root - zabbix
+
+Zabbix:
+Admin - zabbix
+
+Otrs:
+root@localhost - 123456
+otrs.isaac - pass.isaac
+
+Ssh VM zabbix e otrs:
+root - iakim
