@@ -1,6 +1,6 @@
 # Zabbix-OTRS integration
 
-### Estou disponibilizando os arquivos .OVA das duas VM's utulizandas para realizar esses testes, não recomendo colocá-las em produção. O arquivo de senha está logo acima.
+### Estou disponibilizando os arquivos .OVA das duas VM's utulizandas para realizar esses testes, não recomendo colocá-las em produção. O arquivo de senha está logo acima. Extraídas do Oracle VirtualBox 5.1.34r121010.
 
 ## Este documento tem como objetivo realizar a integração do Zabbix com o OTRS.
 
