@@ -7,9 +7,10 @@
 ### Pré-requisitos:
 
 1. Servidor com o OTRS 5 instalado
-2. Servidor com o zabbix 3.2.7 ou superior instalado
+2. Servidor com o zabbix 3.2.7 ou superior instalado (Testado já na versão 3.4.1)
 3. Certifique-se de usar o repositório Epel
-#yum install epel-release
+
+        #yum install epel-release
 
 ## O passo a passo está no documento zabbix-otrs.pdf
 
@@ -17,25 +18,25 @@
 
 ## Comandos
 
-#yum install python python-pip -y
+        #yum install python python-pip -y
 
-#pip install python-otrs
+        #pip install python-otrs
 
-#yum install cpan -y
+        #yum install cpan -y
 
-#scp /opt/otrs/bin/otrs.CheckModules.pl root@zabbix:/tmp/
+        #scp /opt/otrs/bin/otrs.CheckModules.pl root@zabbix:/tmp/
 
-#perl -MCPAN -e otrs.CheckModules.pl
+        #perl -MCPAN -e otrs.CheckModules.pl
 
-#yum install "perl(ExtUtils::MakeMaker)" "perl(Sys::Syslog)" -y
+        #yum install "perl(ExtUtils::MakeMaker)" "perl(Sys::Syslog)" -y
 
-#yum install "perl(Archive::Tar)" "perl(Archive::Zip)" "perl(Crypt::Eksblowfish::Bcrypt)" "perl(Crypt::SSLeay)" "perl(Date::Format)" "perl(DBD::Pg)" "perl(Encode::HanExtra)" "perl(IO::Socket::SSL)" "perl(JSON::XS)" "perl(Mail::IMAPClient)" "perl(IO::Socket::SSL)" "perl(ModPerl::Util)" "perl(Net::DNS)" "perl(Net::LDAP)" "perl(Template)" "perl(Template::Stash::XS)" "perl(Text::CSV_XS)" "perl(Time::Piece)" "perl(XML::LibXML)" "perl(XML::LibXSLT)" "perl(XML::Parser)" "perl(YAML::XS)" -y
+        #yum install "perl(Archive::Tar)" "perl(Archive::Zip)" "perl(Crypt::Eksblowfish::Bcrypt)" "perl(Crypt::SSLeay)" "perl(Date::Format)" "perl(DBD::Pg)" "perl(Encode::HanExtra)" "perl(IO::Socket::SSL)" "perl(JSON::XS)" "perl(Mail::IMAPClient)" "perl(IO::Socket::SSL)" "perl(ModPerl::Util)" "perl(Net::DNS)" "perl(Net::LDAP)" "perl(Template)" "perl(Template::Stash::XS)" "perl(Text::CSV_XS)" "perl(Time::Piece)" "perl(XML::LibXML)" "perl(XML::LibXSLT)" "perl(XML::Parser)" "perl(YAML::XS)" -y
 
-#yum install perl-SOAP-Lite -y
+        #yum install perl-SOAP-Lite -y
 
-#cp /tmp/criar_chamado_zabbix.py /usr/lib/zabbix/alertscripts/
+        #cp /tmp/criar_chamado_zabbix.py /usr/lib/zabbix/alertscripts/
 
-#cp /tmp/fechar_chamado_zabbix.pl /usr/lib/zabbix/alertscripts/
+        #cp /tmp/fechar_chamado_zabbix.pl /usr/lib/zabbix/alertscripts/
 
 ## Scripts
 
