@@ -2,7 +2,11 @@
 
 ### Estou disponibilizando os arquivos .OVA, pelo Telegram (@Iakim) porque não consegui subir eles aqui, das duas VM's utilizadas para realizar esses testes, não recomendo colocá-las em produção. O arquivo de senha está logo acima. Extraídas do Oracle VirtualBox 5.1.34r121010. Essa máquina também já vem inclusa a configuração do Zabbix-Telegram, restando apenas alterar as questãos do Token e id do grupo.
 
+### I am making the .OVA files available through Telegram (@Iakim) because I could not upload them here, of the two VMs used to perform these tests, I do not recommend putting them into production. The password file is just above. Extracted from Oracle VirtualBox 5.1.34r121010. This machine also includes the configuration of the Zabbix-Telegram, remaining only change the issues of the Token and id of the group.
+
 ## Este documento tem como objetivo realizar a integração do Zabbix com o OTRS.
+
+## This document is intended to perform the integration of Zabbix with OTRS.
 
 ### Pré-requisitos:
 
@@ -10,13 +14,23 @@
 2. Servidor com o zabbix 3.2.7 ou superior instalado (Testado já na versão 3.4.1)
 3. Certifique-se de usar o repositório Epel
 
+### Prerequisites:
+
+1. Server with OTRS 5 installed
+2. Server with zabbix 3.2.7 or higher installed (already tested in version 3.4.1)
+3. Be sure to use the Epel repository
+
         #yum install epel-release
 
-## O passo a passo está no documento zabbix-otrs.pdf
+## O passo a passo está no documento zabbix-otrs.pdf.
+
+## The walkthrough is in the document zabbix-otrs.pdf...
 
 ### Telegram: @iakim
 
 ## Comandos
+
+## Commands
 
         #yum install python python-pip -y
 
