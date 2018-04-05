@@ -22,11 +22,9 @@
 
         #yum install epel-release
 
-## O passo a passo está no documento zabbix-otrs.pdf.
+## O passo a passo está no documento zabbix-otrs-br.pdf.
 
-## The walkthrough is in the document zabbix-otrs.pdf...
-
-### Telegram: @iakim
+## The walkthrough is in the document zabbix-otrs-en.pdf.
 
 ## Comandos
 
@@ -68,3 +66,5 @@ Trigger ID: {TRIGGER.ID}
 Total de tempo com problema: {EVENT.AGE}" --fila "Infra" --servico "INFRAESTRUTURA::SERVIDORES::LINUX" --sla "ALTA::24" --triggerid {TRIGGER.ID} --host {HOST.NAME} --status INDISPONIBILIDADE
 
 perl /usr/lib/zabbix/alertscripts/fechar_chamado_zabbix.pl -subject 'Incidente normalizado' -body 'O incidente foi normalizado' -triggerid {TRIGGER.ID}
+
+### Telegram: @iakim
