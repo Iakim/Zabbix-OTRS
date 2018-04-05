@@ -1,4 +1,4 @@
-# encoding: utf-8
+# Encoding: utf-8
 from otrs.ticket.template import GenericTicketConnectorSOAP
 from otrs.client import GenericInterfaceClient
 from otrs.ticket.objects import Ticket, Article, DynamicField, Attachment
@@ -10,6 +10,7 @@ import time
 import re
 
 # Parse das opcoes de linha de comando
+# Parse command line options
 parser = argparse.ArgumentParser(description='Criar um ticket.')
 parser.add_argument('--otrs', dest='server', help='OTRS server address, ex: 10.20.19.47')
 parser.add_argument('--webservice', dest='webservice', default='ZabbixOTRS', help='OTRS Web Servcice')
@@ -29,12 +30,13 @@ args = parser.parse_args()
 #print(args)
 
 # Conexao com o OTRS
+# Connecting to the OTRS
 server_uri = 'http://'+args.server+'/'
 webservice_name = args.webservice
 client = GenericInterfaceClient(server_uri, tc=GenericTicketConnectorSOAP(webservice_name))
 client.tc.SessionCreate(user_login=args.user, password=args.password)
 
-#Criando o ticket
+# Criando o ticket
 t = Ticket(State='Aberto', Priority='3 normal', Queue=args.fila,
            Title=args.title.decode('UTF8'), CustomerUser=args.customer,
            Type='Incidente', Service=args.servico, SLA=args.sla)
@@ -46,6 +48,7 @@ print('Ticket criado: '+str(t_number))
 print('Ticket criado: '+str(t_number)+'::'+args.title)
 
 # Ticket em atendimento
+# Ticket in attendance
 t_upd = Ticket(State='Aberto')
 
 new_article = Article(Subject='Em atendimento', Body='Analisando o incidente.', Charset='UTF8',
