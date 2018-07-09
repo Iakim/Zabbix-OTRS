@@ -10,14 +10,14 @@
 
 ### Pré-requisitos:
 
-1. Servidor com o OTRS 5 instalado
+1. Servidor com o OTRS 5 instalado (Testado já na versão 6)
 2. Servidor com o zabbix 3.2.7 ou superior instalado (Testado já na versão 3.4.1)
 3. Certifique-se de usar o repositório Epel
 
 ### Prerequisites:
 
-1. Server with OTRS 5 installed
-2. Server with zabbix 3.2.7 or higher installed (already tested in version 3.4.1)
+1. Server with OTRS 5 installed (Already tested in version 6)
+2. Server with zabbix 3.2.7 or higher installed (Already tested in version 3.4.1)
 3. Be sure to use the Epel repository
 
         # yum install epel-release
