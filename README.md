@@ -29,6 +29,8 @@
         # yum install python python-pip -y
 
         # pip install python-otrs
+        
+        # pip install zabbix-api
 
         # yum install cpan -y
 
