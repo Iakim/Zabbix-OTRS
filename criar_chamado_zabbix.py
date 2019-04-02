@@ -2,6 +2,7 @@
 from otrs.ticket.template import GenericTicketConnectorSOAP
 from otrs.client import GenericInterfaceClient
 from otrs.ticket.objects import Ticket, Article, DynamicField, Attachment
+from zabbix_api import ZabbixAPI
 
 import mimetypes
 import base64
@@ -23,6 +24,7 @@ parser.add_argument('--fila', dest='fila', help='Fila de atendimento')
 parser.add_argument('--servico', dest='servico', help='Servico de abertura')
 parser.add_argument('--sla', dest='sla', help='SLA')
 parser.add_argument('--triggerid', dest='triggerid', help='Trigger ID do zabbix')
+parser.add_argument('--eventid', dest='eventid', help='Event ID do zabbix')
 parser.add_argument('--host', dest='host', help='Nome do host no zabbix')
 parser.add_argument('--status', dest='status', help='Indisponibilidade')
 args = parser.parse_args()
@@ -46,6 +48,16 @@ a = Article(Subject=args.title.decode('UTF8'), Body=args.descricao.decode('UTF8'
 t_id, t_number = client.tc.TicketCreate(t, a, None, None)
 print('Ticket criado: '+str(t_number))
 print('Ticket criado: '+str(t_number)+'::'+args.title)
+
+# Reconhecimento no evento do zabbix
+# Ack in zabbix event
+
+username = 'Admin'
+password = 'zabbix'
+server = 'http://127.0.0.1/zabbix/'
+conexao = ZabbixAPI(server = server)
+conexao.login(username, password)
+reconhecer_evento = conexao.event.acknowledge({"eventids": args.eventid, "message": "Ticket " +str(t_number) + " criado no OTRS."})
 
 # Ticket em atendimento
 # Ticket in attendance
