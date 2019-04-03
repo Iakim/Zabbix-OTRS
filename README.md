@@ -62,7 +62,7 @@ Data do evento: {EVENT.DATE} {EVENT.TIME}
 Data atual: {DATE} {TIME}
 Trigger ID: {TRIGGER.ID}
 Event ID: {EVENT.ID}
-Total de tempo com problema: {EVENT.AGE}" --fila "Infra" --servico "INFRAESTRUTURA::SERVIDORES::LINUX" --sla "ALTA::24" --triggerid {TRIGGER.ID} --host {HOST.NAME} --status INDISPONIBILIDADE --eventid {EVENT.ID}
+Total de tempo com problema: {EVENT.AGE}" --fila "Infra" --servico "INFRAESTRUTURA::SERVIDORES::LINUX" --sla "ALTA::24" --triggerid {TRIGGER.ID} --host {HOST.NAME} --status INDISPONIBILIDADE --eventid {EVENT.ID} --actionid 2
 
 perl /usr/lib/zabbix/alertscripts/fechar_chamado_zabbix.pl -subject 'Incidente normalizado' -body 'O incidente foi normalizado' -triggerid {TRIGGER.ID}
 
