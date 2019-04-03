@@ -24,6 +24,7 @@ parser.add_argument('--servico', dest='servico', help='Servico de abertura')
 parser.add_argument('--sla', dest='sla', help='SLA')
 parser.add_argument('--triggerid', dest='triggerid', help='Trigger ID do zabbix')
 parser.add_argument('--eventid', dest='eventid', help='Event ID do zabbix')
+parser.add_argument('--actionid', dest='actionid', help='Action ID do zabbix')
 parser.add_argument('--host', dest='host', help='Nome do host no zabbix')
 parser.add_argument('--status', dest='status', help='Indisponibilidade')
 args = parser.parse_args()
@@ -49,7 +50,7 @@ print('Ticket criado: '+str(t_number))
 print('Ticket criado: '+str(t_number)+'::'+args.title)
 
 # ACK
-ack = "python /usr/lib/zabbix/externalscripts/ack_zabbix.py" + args.eventid + " " + str(t_number)
+ack = "python /usr/lib/zabbix/externalscripts/ack_zabbix.py" + args.eventid + " " + args.actionid " " + str(t_number)
     os.system(ack)
 
 # Ticket em atendimento
