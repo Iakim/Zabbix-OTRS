@@ -48,6 +48,10 @@ t_id, t_number = client.tc.TicketCreate(t, a, None, None)
 print('Ticket criado: '+str(t_number))
 print('Ticket criado: '+str(t_number)+'::'+args.title)
 
+# ACK
+ack = "python /usr/lib/zabbix/externalscripts/ack_zabbix.py" + args.eventid + " " + str(t_number)
+    os.system(ack)
+
 # Ticket em atendimento
 # Ticket in attendance
 t_upd = Ticket(State='Aberto')
