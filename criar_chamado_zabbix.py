@@ -51,6 +51,7 @@ print('Ticket criado: '+str(t_number)+'::'+args.title)
 
 # ACK
 ack = "python /usr/lib/zabbix/externalscripts/ack_zabbix.py" + args.eventid + " " + arsg.actionid + " " + str(t_number)
+print("python /usr/lib/zabbix/externalscripts/ack_zabbix.py" + args.eventid + " " + arsg.actionid + " " + str(t_number))
 os.system(ack)
 
 # Ticket em atendimento
