@@ -8,6 +8,8 @@ import base64
 import argparse
 import time
 import re
+import os
+import sys
 
 # Parse das opcoes de linha de comando
 # Parse command line options
