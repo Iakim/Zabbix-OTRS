@@ -11,7 +11,6 @@ import re
 import os
 import sys
 
-# Parse das opcoes de linha de comando
 # Parse command line options
 parser = argparse.ArgumentParser(description='Criar um ticket.')
 parser.add_argument('--otrs', dest='server', help='OTRS server address, ex: 10.20.19.47')
@@ -32,14 +31,13 @@ args = parser.parse_args()
 
 #print(args)
 
-# Conexao com o OTRS
 # Connecting to the OTRS
 server_uri = 'http://'+args.server+'/'
 webservice_name = args.webservice
 client = GenericInterfaceClient(server_uri, tc=GenericTicketConnectorSOAP(webservice_name))
 client.tc.SessionCreate(user_login=args.user, password=args.password)
 
-# Criando o ticket
+# Create of ticket
 t = Ticket(State='Aberto', Priority='3 normal', Queue=args.queue,
            Title=args.title.decode('UTF8'), CustomerUser=args.customer,
            Type='Incidente', Service=args.service, SLA=args.sla)
