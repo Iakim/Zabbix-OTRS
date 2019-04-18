@@ -14,7 +14,7 @@ use XML::Simple;
 
 my $TicketSearchID;
 my $Operation 		= 0;
-my $body 			= '';
+my $body 		= '';
 my $triggerid 		= 0;
 my $subject 		= '';
 my $UserLogin 	= "otrs.isaac";
@@ -25,7 +25,7 @@ GetOptions (
 			"subject=s"     => \$subject,
 			"body=s"        => \$body,
 			"triggerid=s"   => \$triggerid
-			);
+);
 
 			
 # #---
@@ -231,8 +231,8 @@ else {
 							}
 				}
 				
-				}
+			}
 			$aux = $aux + 1; 	
 		}
 	}
-	}
+}
