@@ -52,7 +52,6 @@ print('Ticket criado: '+str(t_number)+'::'+args.title)
 ack = "python /usr/lib/zabbix/alertscripts/ack_zabbix.py" + args.eventid + " " + str(t_number)
 os.system(ack)
 
-# Ticket em atendimento
 # Ticket in attendance
 t_upd = Ticket(State='Aberto')
 
