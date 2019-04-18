@@ -19,10 +19,10 @@ parser.add_argument('--webservice', dest='webservice', default='ZabbixOTRS', hel
 parser.add_argument('--user', dest='user', default='otrs.isaac', help='OTRS user')
 parser.add_argument('--pass', dest='password', default='pass.isaac', help='OTRS pass')
 parser.add_argument('--customer', dest='customer', help='Customer')
-parser.add_argument('--title', dest='title', help='Titulo do chamado')
-parser.add_argument('--desc', dest='descricao', help='Descricao')
-parser.add_argument('--fila', dest='fila', help='Fila de atendimento')
-parser.add_argument('--servico', dest='servico', help='Servico de abertura')
+parser.add_argument('--title', dest='title', help='Title of ticket')
+parser.add_argument('--desc', dest='description', help='Description')
+parser.add_argument('--queue', dest='queue', help='Queue')
+parser.add_argument('--service', dest='service', help='Service of ticket')
 parser.add_argument('--sla', dest='sla', help='SLA')
 parser.add_argument('--triggerid', dest='triggerid', help='Trigger ID do zabbix')
 parser.add_argument('--eventid', dest='eventid', help='Event ID do zabbix')
@@ -40,10 +40,10 @@ client = GenericInterfaceClient(server_uri, tc=GenericTicketConnectorSOAP(webser
 client.tc.SessionCreate(user_login=args.user, password=args.password)
 
 # Criando o ticket
-t = Ticket(State='Aberto', Priority='3 normal', Queue=args.fila,
+t = Ticket(State='Aberto', Priority='3 normal', Queue=args.queue,
            Title=args.title.decode('UTF8'), CustomerUser=args.customer,
-           Type='Incidente', Service=args.servico, SLA=args.sla)
-a = Article(Subject=args.title.decode('UTF8'), Body=args.descricao.decode('UTF8'), Charset='UTF8',
+           Type='Incidente', Service=args.service, SLA=args.sla)
+a = Article(Subject=args.title.decode('UTF8'), Body=args.description.decode('UTF8'), Charset='UTF8',
             MimeType='text/plain')
 
 t_id, t_number = client.tc.TicketCreate(t, a, None, None)
