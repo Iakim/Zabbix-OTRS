@@ -8,5 +8,5 @@ Otrs:
 root@localhost - 123456
 otrs.isaac - pass.isaac
 
-Ssh VM zabbix e otrs:
+Ssh VM zabbix and otrs:
 root - iakim
