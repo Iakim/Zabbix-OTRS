@@ -1,14 +1,6 @@
 # Zabbix-OTRS integration
 
-## Este documento tem como objetivo realizar a integração do Zabbix com o OTRS.
-
-## This document is intended to perform the integration of Zabbix with OTRS.
-
-### Pré-requisitos:
-
-1. Servidor com o OTRS 5 instalado (Testado já na versão 6)
-2. Servidor com o zabbix 3.2.7 ou superior instalado (Testado já na versão 3.4.1)
-3. Certifique-se de usar o repositório Epel
+### This document is intended to perform the integration of Zabbix with OTRS.
 
 ### Prerequisites:
 
@@ -18,13 +10,9 @@
 
         # yum install epel-release
 
-## O passo a passo está no documento zabbix-otrs-br.pdf.
+### The walkthrough is in the document zabbix-otrs-XX.pdf.
 
-## The walkthrough is in the document zabbix-otrs-en.pdf.
-
-## Comandos
-
-## Commands
+### Commands
 
         # yum install python python-pip -y
 
@@ -48,22 +36,25 @@
 
         # cp /tmp/fechar_chamado_zabbix.pl /usr/lib/zabbix/alertscripts/
 
-## Scripts
+### Scripts
 
-python criar_chamado_zabbix.py --otrs {IP_OTRS} --webservice ZabbixOTRS --user {USUARIO} --pass {SENHA} --customer {CLIENTE} --title "Teste de chamado" --desc "Descrição do Chamado" --queue "{FILA}" --service "{SERVICO}" --sla "{SLA}"
+## Test
+        python criar_chamado_zabbix.py --otrs {IP_OTRS} --webservice ZabbixOTRS --user {USER} --pass {PASSWORD} --customer {COSTUMER} --title "Test of ticket" --desc "Description of ticket" --queue "{QUEUE}" --service "{SERVICE}" --sla "{SLA}"
 
-/bin/python /usr/lib/zabbix/alertscripts/criar_chamado_zabbix.py --otrs 10.20.19.47 --webservice ZabbixOTRS --user otrs.isaac --pass pass.isaac --customer cliente --title "PROBLEMA: {TRIGGER.SEVERITY} - {TRIGGER.NAME} - {TRIGGER.STATUS}" --desc "O host abaixo esta com problemas.
-Nome do host: {HOST.HOST}
-Nome do item: {ITEM.NAME}
-Nome da trigger: {TRIGGER.NAME}
-Status da trigger: {TRIGGER.STATUS}
-Severidade da trigger: {TRIGGER.SEVERITY}
-Data do evento: {EVENT.DATE} {EVENT.TIME}
-Data atual: {DATE} {TIME}
-Trigger ID: {TRIGGER.ID}
-Event ID: {EVENT.ID}
-Total de tempo com problema: {EVENT.AGE}" --queue "Infra" --service "INFRAESTRUTURA::SERVIDORES::LINUX" --sla "ALTA::24" --triggerid {TRIGGER.ID} --host {HOST.NAME} --status INDISPONIBILIDADE --eventid {EVENT.ID}
+## Action on Zabbix for create
+        /bin/python /usr/lib/zabbix/alertscripts/criar_chamado_zabbix.py --otrs 10.20.19.47 --webservice ZabbixOTRS --user otrs.isaac --pass pass.isaac --customer alexander --title "PROBLEM: {TRIGGER.SEVERITY} - {TRIGGER.NAME} - {TRIGGER.STATUS}" --desc "The host below is having problems.
+        Name of host: {HOST.HOST}
+        Name of item: {ITEM.NAME}
+        Name of trigger: {TRIGGER.NAME}
+        Status of trigger: {TRIGGER.STATUS}
+        Severity of trigger: {TRIGGER.SEVERITY}
+        Event date: {EVENT.DATE} {EVENT.TIME}
+        Actual date: {DATE} {TIME}
+        Trigger ID: {TRIGGER.ID}
+        Event ID: {EVENT.ID}
+        Total time of event: {EVENT.AGE}" --queue "Infra" --service "INFRASTRUCTURE::SERVER::LINUX" --sla "HIGH::2" --triggerid {TRIGGER.ID} --host {HOST.NAME} --status Incident --eventid {EVENT.ID}
 
-perl /usr/lib/zabbix/alertscripts/fechar_chamado_zabbix.pl -subject 'Incidente normalizado' -body 'O incidente foi normalizado' -triggerid {TRIGGER.ID}
+## Action on Zabbix for close
+        perl /usr/lib/zabbix/alertscripts/fechar_chamado_zabbix.pl -subject 'Standard Incident' -body 'The incident was standardized' -triggerid {TRIGGER.ID}
 
 ### Telegram: @iakim
