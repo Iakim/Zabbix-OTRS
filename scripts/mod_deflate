@@ -1,0 +1,8 @@
+#Esse módulo contribui para o tunning do OTRS, caso venha a ter problema de lentidão.
+#Adicionar no arquivo httpd.conf
+#Para mais informações, acessar o site do otrsbrasil.com
+
+<IfModule mod_deflate.c>
+SetOutputFilter DEFLATE
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+</IfModule>
