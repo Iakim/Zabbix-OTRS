@@ -1,4 +1,4 @@
-# Zabbix-OTRS integration
+# Zabbix + OTRS integration
 
 ### This document is intended to perform the integration of Zabbix with OTRS.
 
