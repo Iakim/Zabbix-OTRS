@@ -52,9 +52,9 @@
         Actual date: {DATE} {TIME}
         Trigger ID: {TRIGGER.ID}
         Event ID: {EVENT.ID}
-        Total time of event: {EVENT.AGE}" --queue "Infra" --service "INFRASTRUCTURE::SERVER::LINUX" --sla "HIGH::2" --triggerid {TRIGGER.ID} --host {HOST.NAME} --status Incident --eventid {EVENT.ID}
+        Total time of event: {EVENT.AGE}" --queue "Infra" --service "INFRASTRUCTURE::SERVER::LINUX" --sla "HIGH::2" --triggerid "{TRIGGER.ID}" --host "{HOST.NAME}" --status "Incident" --eventid "{EVENT.ID}"
 
 ## Action on Zabbix for close
-        perl /usr/lib/zabbix/alertscripts/fechar_chamado_zabbix.pl -subject 'Standard Incident' -body 'The incident was standardized' -triggerid {TRIGGER.ID}
+        perl /usr/lib/zabbix/alertscripts/fechar_chamado_zabbix.pl -subject 'Standard Incident' -body 'The incident was standardized' -triggerid "{TRIGGER.ID}"
 
 ### Telegram: @iakim
