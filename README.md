@@ -1,5 +1,8 @@
 # Zabbix + OTRS integration
 
+# WARNING!!!!! 
+## Do not copy paste anything from the PDF, all the necessary scripts are here below!!!!
+
 ### This document is intended to perform the integration of Zabbix with OTRS.
 
 ### Prerequisites:
@@ -26,9 +29,7 @@
 
         # perl -MCPAN -e otrs.CheckModules.pl
 
-        # yum install "perl(ExtUtils::MakeMaker)" "perl(Sys::Syslog)" -y
-
-        # yum install "perl(Archive::Tar)" "perl(Archive::Zip)" "perl(Crypt::Eksblowfish::Bcrypt)" "perl(Crypt::SSLeay)" "perl(Date::Format)" "perl(DBD::Pg)" "perl(Encode::HanExtra)" "perl(IO::Socket::SSL)" "perl(JSON::XS)" "perl(Mail::IMAPClient)" "perl(IO::Socket::SSL)" "perl(ModPerl::Util)" "perl(Net::DNS)" "perl(Net::LDAP)" "perl(Template)" "perl(Template::Stash::XS)" "perl(Text::CSV_XS)" "perl(Time::Piece)" "perl(XML::LibXML)" "perl(XML::LibXSLT)" "perl(XML::Parser)" "perl(YAML::XS)" -y
+        # yum install "perl(Archive::Tar)" "perl(Archive::Zip)" "perl(Crypt::Eksblowfish::Bcrypt)" "perl(Crypt::SSLeay)" "perl(Date::Format)" "perl(DBD::Pg)" "perl(Encode::HanExtra)" "perl(IO::Socket::SSL)" "perl(JSON::XS)" "perl(Mail::IMAPClient)" "perl(IO::Socket::SSL)" "perl(ModPerl::Util)" "perl(Net::DNS)" "perl(Net::LDAP)" "perl(Template)" "perl(Template::Stash::XS)" "perl(Text::CSV_XS)" "perl(Time::Piece)" "perl(XML::LibXML)" "perl(XML::LibXSLT)" "perl(XML::Parser)" "perl(YAML::XS)" "perl(ExtUtils::MakeMaker)" "perl(Sys::Syslog)" -y
 
         # yum install perl-SOAP-Lite -y
 
