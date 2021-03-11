@@ -8,7 +8,7 @@
 ### Prerequisites:
 
 1. Server with OTRS 5 installed (Already tested in version 6)
-2. Server with zabbix 3.2.7 or higher installed (Already tested in version 3.4.1)
+2. Server with zabbix 3.2.7 or higher installed
 3. Be sure to use the Epel repository
 
         # yum install epel-release
